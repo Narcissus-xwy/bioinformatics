@@ -1,222 +1,174 @@
-# Bioinformatics: Leaving the science of coat and pipette
+# 生物信息学：告别白大褂和移液枪的科学
 
-### A course by Albert Tafur Rangel, Ph.D.
-
-------------------------------------------------------------------------
-
-:spiral_calendar: ----, 20--  
-:alarm_clock:  
-:hotel: --------  
-:writing_hand: )
-
-------------------------------------------------------------------------
-
-# Course Overview
-
-This course introduces the foundations of **bioinformatics and computational biology** from a practical perspective: you'll learn where biological data come from, how they're stored and shared, and how to analyze them using a Unix-like environment and scripting.
-
-Throughout the modules, we'll connect core concepts (sequence data, alignments, assemblies, annotation, phylogenetics, and multiple "omics") to real-world workflows used in research and industry.
-
-**By the end of the course, you should be able to:**
-
-- Navigate biological databases and download sequence data in standard formats
-- Work comfortably in a **Unix/Linux** terminal (also applicable to macOS)
-- Automate repetitive tasks with small scripts (Bash and Python)
-- Understand the principles behind sequencing, alignment, assembly and genome annotation
-- Build phylogenetic trees and interpret evolutionary relationships
-- Interpret results in context: quality, limitations, and biological meaning
-
-## Learning objectives
-
-- Understanding the general concepts of bioinformatics and computational biology
-- Learning to navigate, retrieve and interpret biological data from public databases
-- Gaining practical skills in Unix command-line tools and Python scripting for biological data analysis
-- Being able to generate and interpret complex analyses: alignments, phylogenies, assemblies and annotations
-
-## Is this course for me?
-
-This course will be appropriate for you if you answer yes to these questions:
-
--   Are you a student or researcher in biology, microbiology, biotechnology or related fields?
-
--   Do you want to understand how bioinformatics tools work, not just run them?
-
--   Would you like to learn to automate analyses and work with biological data programmatically?
-
-
-## Instructor
-
-[**Dr. Albert Tafur Rangel**](https://orcid.org/0000-0002-9428-183X) (he/him) is a computational biologist with a passion for teaching and design. After his PhD, he combined his expertise in bioinformatics, microbiology and data science to create educational materials that bridge wet-lab and dry-lab thinking.
+### 课程作者：Albert Tafur Rangel 博士
 
 ---
 
-# Content
+# 课程概述
 
-> **Tip:** each module title links to its `README.md`. Practices are listed separately below each description.
+本课程从实践角度介绍**生物信息学和计算生物学**的基础：你将学习生物数据从何而来、如何存储和共享，以及如何在类 Unix 环境中使用脚本来分析它们。
 
----
+在整个模块中，我们将核心概念（序列数据、比对、组装、注释、系统发育学以及多种"组学"）与研究和工业中使用的实际工作流联系起来。
 
-## Module 1 — Introduction to Bioinformatics
+**完成本课程后，你应该能够：**
 
-📂 **[01-introduction/README.md](01-introduction/README.md)**
+- 浏览生物数据库并以标准格式下载序列数据
+- 在 **Unix/Linux** 终端中自如工作（也适用于 macOS）
+- 使用小型脚本（Bash 和 Python）自动化重复性任务
+- 理解测序、比对、组装和基因组注释背后的原理
+- 构建系统发育树并解读进化关系
+- 结合背景解读结果：质量、局限性和生物学意义
 
-Core ideas: what bioinformatics is, why it matters, and the ecosystem of biological data.
+## 学习目标
 
-**Topics:**
-- The bioinformatics mindset: multidisciplinary science and computational thinking
-- The central dogma, "omics" and how they generate data
-- Biological databases (NCBI / ENA / UniProt), identifiers and metadata
-- File formats used across the course: FASTA, FASTQ, GFF, GenBank, etc.
+- 理解生物信息学和计算生物学的一般概念
+- 学习从公共数据库浏览、检索和解读生物数据
+- 获得 Unix 命令行工具和用于生物数据分析的 Python 脚本编写的实践技能
+- 能够生成和解读复杂分析：比对、系统发育、组装和注释
 
-**Practices:**
-- [Biological databases](01-introduction/exercises/01_databases.md) — search, navigate and download sequences from NCBI
+## 本课程适合我吗？
 
----
+如果你对以下问题回答"是"，本课程就适合你：
 
-## Module 2 — Coding Basics: Unix + Scripting
+- 你是生物学、微生物学、生物技术或相关领域的学生或研究者吗？
+- 你想理解生物信息学工具*如何*工作，而不仅仅是运行它们吗？
+- 你想学习自动化分析并以编程方式处理生物数据吗？
 
-📂 **[02-coding-basics/README.md](02-coding-basics/README.md)**
+## 讲师
 
-You'll learn the "everyday tools" of bioinformatics: the command line and automation.
-
-**Topics:**
-- Unix/Linux foundations (also relevant for macOS): navigation, permissions, pipes and redirection
-- Text processing for biological files (`grep`, `cut`, `sort`, `wc`, pipes)
-- Scripting fundamentals in Python: variables, types, control flow, file I/O
-- Application of scripting to FASTA/sequence manipulation and biological data analysis
-
-**Practices:**
-- [Creating a GitHub account](02-coding-basics/exercises/01_creating_an_github_account.md) — set up GitHub and Codespaces for the course
-- [Using the Unix terminal](02-coding-basics/exercises/02_using_unix_terminal.md) — navigation, file manipulation and text processing with biological files
-- [Scripting in Python](02-coding-basics/exercises/03_scripting_in_python.md) — variables, data types, conditionals, loops and scripts for biological analysis
+[**Albert Tafur Rangel 博士**](https://orcid.org/0000-0002-9428-183X) 是一位计算生物学家，对教学和设计充满热情。博士毕业后，他结合了在生物信息学、微生物学和数据科学方面的专业知识，创建了桥接湿实验和干实验思维的教育材料。
 
 ---
 
-## Module 3 — Sequence Analysis: BLAST, Alignments and Primer Design
+# 目录
 
-📂 **[03-sequence_analysis/README.md](03-sequence_analysis/README.md)**
-
-This is where you start doing what bioinformaticians do most: **comparing sequences**.
-
-**Topics:**
-- Similarity search with BLAST (`blastn`, `blastp`, `blastx`) and result interpretation (E-value, score, identity, coverage)
-- Global vs local alignment: Needleman-Wunsch and Smith-Waterman algorithms with dynamic programming
-- Identity vs similarity; scoring schemes and gap penalties
-- Primer design criteria, Primer-BLAST and *in silico* PCR / electrophoresis
-
-**Practices:**
-- [Alignment with dynamic programming](03-sequence_analysis/exercises/code/alignment_dp.py) — Python implementation of Needleman-Wunsch and Smith-Waterman from scratch
-- [Primer design](03-sequence_analysis/exercises/01_primer_design.md) — design primers with Primer-BLAST, validate amplicon size and simulate gel electrophoresis
+> **提示：** 每个模块标题链接到其 `README.md`。
 
 ---
 
-## Module 4 — Phylogenetics and Evolutionary Inference
+## 模块 1 — 生物信息学导论
 
-📂 **[04-phylogenetics/README.md](04-phylogenetics/README.md)**
+📂 **[01-introduction/README.md](01-introduction/README.md)** | 📂 **[中文版](zh/01-introduction/README.md)**
 
-You'll build and interpret evolutionary trees from molecular data.
+核心概念：什么是生物信息学，为什么它重要，以及生物数据的生态系统。
 
-**Topics:**
-- Multiple sequence alignment (MSA) and model choice
-- Distance-based vs character-based methods (Neighbor-Joining, Maximum Likelihood)
-- Bootstrapping and statistical support values
-- Interpreting phylogenies in biological and clinical context
-
-**Practices:**
-- [Bacterial identification by 16S rRNA phylogenetic analysis](04-phylogenetics/exercises/01_phylogenetics.md) — case-based practice (clinical, environmental, Streptomyces): BLAST, reference selection, MSA, NJ/ML tree construction in MEGA and unknown bacterium identification
+**主题：**
+- 生物信息学思维：多学科科学和计算思维
+- 中心法则、"组学"及其如何产生数据
+- 生物数据库（NCBI / ENA / UniProt）、标识符和元数据
+- 课程中使用的文件格式：FASTA, FASTQ, GFF, GenBank 等
 
 ---
 
-## Module 5 — DNA/RNA Sequencing: From Molecule to Assembled Genome
+## 模块 2 — 编程基础：Unix + 脚本
 
-📂 **[05_sequencing/README.md](05_sequencing/README.md)**
+📂 **[02-coding-basics/README.md](02-coding-basics/README.md)** | 📂 **[中文版](zh/02-coding-basics/README.md)**
 
-Now you learn where the data actually come from — and how to reconstruct genomes from them.
-
-**Topics:**
-- Molecular foundations: nucleotide structure, 3'-OH, DNA replication and why Sanger/Illumina work
-- Timeline of sequencing technologies: Sanger → 454 → Illumina → PacBio → Nanopore
-- Quality scores (Phred), FASTQ format, coverage, depth, trimming
-- Single-end vs paired-end reads
-- Assembly strategies: mapping vs *de novo*; OLC and De Bruijn graphs; k-mers
-- Assembly evaluation: N50, L50, NG50, BUSCO, contamination checks
-
-**Practices:**
-- [Genome assembly with FastQC + Velvet](05_sequencing/exercises/01_2_genome_assembly_fastqc_velvet.md)
-- [Genome assembly with Falco + fastp + Shovill](05_sequencing/exercises/01_1_genome_assembly_falco_fastp_shovill.md)
+**主题：**
+- Unix/Linux 基础：导航、权限、管道和重定向
+- 生物文件的文本处理（`grep`, `cut`, `sort`, `wc`, pipes）
+- Python 脚本基础：变量、类型、控制流、文件 I/O
 
 ---
 
- ## Module 6 — Genomics: From Assembled Genome to Biological Knowledge
+## 模块 3 — 序列分析：BLAST、比对和引物设计
 
-📂 **[06-genomics/README.md](06-genomics/README.md)**
+📂 **[03-sequence_analysis/README.md](03-sequence_analysis/README.md)** | 📂 **[中文版](zh/03-sequence_analysis/README.md)**
 
-You give biological meaning to assembled genomes: annotation, variants, and comparative genomics.
-
-**Topics:**
-- Genome annotation: gene prediction (prokaryotes vs eukaryotes), functional assignment, GFF/GBK formats
-- Variant detection: SNPs, indels, VCF format, mapping against a reference
-- Comparative genomics: ANI, pan-genome (core/accessory), AMR/virulence gene detection, synteny
-
-**Practices:**
-- [Genome annotation](06-genomics/exercises/01_1_genome_annotation_galaxy.md)
+**主题：**
+- 使用 BLAST 进行相似性搜索和结果解读
+- 全局 vs 局部比对：Needleman-Wunsch 和 Smith-Waterman 算法
+- 同一性 vs 相似性；打分方案和 gap 罚分
+- 引物设计标准和 Primer-BLAST
 
 ---
 
-## Module 7 — Protein Bioinformatics
+## 模块 4 — 系统发育学与进化推断
 
-📂 **[06-proteins/README.md](07-proteins/README.md)**
+📂 **[04-phylogenetics/README.md](04-phylogenetics/README.md)** | 📂 **[中文版](zh/04-phylogenetics/README.md)**
 
-**Topics:**
-- Protein sequences, domains, motifs and families
-- Searching and annotating proteins (BLASTp, Pfam/InterPro)
-- Structure basics and functional inference
-
----
-
-## Module 8 — Transcriptomics (RNA-Seq)
-
-📂 **[07-transcriptomics/README.md](09-transcriptomics/README.md)**
-
-**Topics:**
-- What RNA-Seq measures, experimental design and key biases
-- Quantification concepts (counts, TPM/FPKM) and normalization
-- Differential expression and functional interpretation
+**主题：**
+- 多序列比对（MSA）和模型选择
+- 基于距离 vs 基于特征的方法（NJ, ML）
+- Bootstrap 和统计支持值
+- 解读系统发育树的生物学和临床意义
 
 ---
 
-## Module 9 — Proteomics
+## 模块 5 — DNA/RNA 测序：从分子到组装基因组
 
-📂 **[08-proteomics/README.md](08-proteomics/README.md)**
+📂 **[05_sequencing/README.md](05_sequencing/README.md)** | 📂 **[中文版](zh/05_sequencing/README.md)**
 
-**Topics:**
-- Mass spectrometry basics and peptide identification
-- Protein quantification and common analysis steps
-- Linking proteomics to pathways and biological interpretation
-
----
-
-## Module 10 — Metabolic Models
-
-📂 **[09-metabolic-models/README.md](10-metabolic-models/README.md)**
-
-**Topics:**
-- Metabolic networks and genome-scale metabolic models (GEMs)
-- Flux Balance Analysis (FBA): intuition, constraints and objective functions
-- Interpreting predictions and connecting models to experiments
+**主题：**
+- 分子基础：核苷酸结构、3'-OH 以及 Sanger/Illumina 的原理
+- 测序技术时间线：Sanger → 454 → Illumina → PacBio → Nanopore
+- 质量分数（Phred）、FASTQ 格式、覆盖度和深度
+- 组装策略：mapping vs *de novo*；OLC 和 De Bruijn 图
 
 ---
 
-## Pre-work
+## 模块 6 — 基因组学：从组装基因组到生物学知识
 
+📂 **[06-genomics/README.md](06-genomics/README.md)** | 📂 **[中文版](zh/06-genomics/README.md)**
 
-## Required software and toolbox
+**主题：**
+- 基因组注释：基因预测、功能分配、GFF/GBK 格式
+- 变异检测：SNP、indel、VCF 格式
+- 比较基因组学：ANI、泛基因组、AMR/毒力基因检测
 
-- **GitHub account** — free, for Codespaces access ([github.com](https://github.com))
-- **MEGA X** — phylogenetic analysis ([megasoftware.net](https://www.megasoftware.net/))
-- **Web browser** — for NCBI, BLAST, Primer-BLAST and other online tools
-- Any additional tools will be introduced in the corresponding module
+---
 
-------------------------------------------------------------------------
+## 模块 7 — 蛋白质生物信息学
 
-This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).<br>![](https://i.creativecommons.org/l/by/4.0/88x31.png)
+📂 **[07-proteins/README.md](07-proteins/README.md)** | 📂 **[中文版](zh/07-proteins/README.md)**
+
+**主题：**
+- 蛋白质序列、结构域、基序和家族
+- 蛋白质搜索和注释（BLASTp, Pfam/InterPro）
+- 结构基础与功能推断
+
+---
+
+## 模块 8 — 蛋白质组学
+
+📂 **[08-proteomics/README.md](08-proteomics/README.md)** | 📂 **[中文版](zh/08-proteomics/README.md)**
+
+**主题：**
+- 质谱基础与肽段鉴定
+- 蛋白质定量与常见分析步骤
+- 将蛋白质组学与通路和生物学解读相连接
+
+---
+
+## 模块 9 — 转录组学（RNA-Seq）
+
+📂 **[09-transcriptomics/README.md](09-transcriptomics/README.md)** | 📂 **[中文版](zh/09-transcriptomics/README.md)**
+
+**主题：**
+- RNA-Seq 测量什么、实验设计与关键偏倚
+- 定量概念（counts, TPM/FPKM）与归一化
+- 差异表达与功能解读
+
+---
+
+## 模块 10 — 代谢网络建模
+
+📂 **[10-metabolic-models/README.md](10-metabolic-models/README.md)** | 📂 **[中文版](zh/10-metabolic-models/README.md)**
+
+**主题：**
+- 代谢网络与基因组规模代谢模型（GEM）
+- 通量平衡分析（FBA）：直觉、约束和目标函数
+- 解读预测并将其与实验相连接
+
+---
+
+## 所需软件和工具箱
+
+- **GitHub 账户** — 免费，用于访问 Codespaces（[github.com](https://github.com)）
+- **MEGA X** — 系统发育分析（[megasoftware.net](https://www.megasoftware.net/)）
+- **网页浏览器** — 用于 NCBI、BLAST、Primer-BLAST 及其他在线工具
+- 其他工具将在相应模块中介绍
+
+---
+
+本作品基于 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) 许可。
