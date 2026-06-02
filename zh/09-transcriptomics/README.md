@@ -298,8 +298,11 @@ Gene_C     0.3     0.1000    0.500
 
 ## 模块练习
 
-| 练习 | 描述 |
-|---|---|
-| 质量控制和比对 | 给定 FASTQ 文件，运行 FastQC，使用 STAR 或 Bowtie2 比对读长 |
-| 计数矩阵和 DE | 使用 featureCounts 创建计数矩阵，并使用 DESeq2 进行差异表达分析 |
-| 功能富集 | 给定 DEG 列表，使用 g:Profiler 或 clusterProfiler 进行 GO 和 KEGG 富集 |
+> [!NOTE]
+> 以下练习为 **AI + 单细胞 + 类器官**方向定制。练习 1 为核心流程，练习 2（AI/ML 视角）和练习 3（类器官延伸）对具备 Python/AI 基础的入门研究者设计。
+
+| 练习 | 描述 | 方向定制 |
+|---|---|---|
+| [练习 1：scRNA-seq 核心分析流程](exercises/01_scRNAseq_pipeline.md) | 使用 Scanpy 对 PBMC 3k 数据集进行完整分析：QC、归一化、PCA、UMAP、Leiden 聚类、标记基因鉴定、细胞类型注释 | ✅ 所有单细胞研究者的起点 |
+| [练习 2：AI/ML 视角下的 scRNA-seq](exercises/02_AI_dimension.md) | 对比 PCA vs VAE/scVI，Leiden vs HDBSCAN，讨论批次校正、基础模型（Geneformer、scGPT），算法选择决策框架 | ✅ 适合有 AI/Python 基础的读者 |
+| [练习 3：类器官 × 单细胞转录组](exercises/03_organoid_analysis.md) | 类器官 scRNA-seq 的特殊问题：与真实组织对比、轨迹推断（pseudotime、RNA velocity）、分化效率评估、公开数据集分析指南 | ✅ 面向类器官研究方向的读者 |
