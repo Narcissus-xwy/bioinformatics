@@ -210,6 +210,8 @@ adata.raw = adata
 # 检测高变基因（HVGs）
 # flavor='seurat_v3' 需要 scikit-misc 库（教程开头已安装）
 # 如果遇到 ImportError，运行 !pip install scikit-misc -q
+# ⚠️ 警告非整数是正常的：pbmc3k() 的"raw"数据已轻度预处理，
+#    不影响 HVG 选择结果。如在自己的整数计数数据上用则无此警告。
 sc.pp.highly_variable_genes(adata, n_top_genes=2000, flavor='seurat_v3')
 
 # 多少基因被选为高变？
@@ -327,6 +329,7 @@ print(markers)
 ```python
 # 对特定标记基因可视化
 # PBMC 已知的经典细胞标记
+# 注意：仅保留在数据中确实存在的基因（JCHAIN 等稀有标记可能被 QC 过滤掉）
 known_markers = {
     'CD3D': 'T 细胞',
     'CD8A': 'CD8+ T 细胞',
@@ -337,13 +340,17 @@ known_markers = {
     'FCGR3A': 'CD16+ 单核细胞',
     'PPBP': '巨核细胞/血小板',
     'CST3': '树突状细胞 (DC)',
-    'JCHAIN': '浆细胞样 DC (pDC)',
+    'GZMB': 'NK/细胞毒性 T 细胞 / pDC',
     'CD79A': 'B 细胞',
     'IL7R': '记忆 CD4+ T 细胞',
     'CCR7': '初始 T 细胞'
 }
 
-sc.pl.umap(adata, color=list(known_markers.keys()), 
+# 只绘制数据中实际存在的基因（防止稀有基因被过滤后 KeyError）
+available_markers = {g: v for g, v in known_markers.items() if g in adata.var_names}
+print(f'可绘制的标记基因：{len(available_markers)}/{len(known_markers)}')
+
+sc.pl.umap(adata, color=list(available_markers.keys()), 
            cmap='viridis', ncols=4, vmax='p99')
 ```
 
