@@ -54,8 +54,9 @@
 **在 Google Colab 中运行**（无需本地安装）：
 
 ```python
-# 安装 Scanpy（Colab 中 Python 3.10+）
-!pip install scanpy[leiden] anndata matplotlib pandas numpy -q
+# 安装依赖（Colab 中 Python 3.10+）
+# scikit-misc 是 flavor='seurat_v3' 所需的 LOESS 回归库
+!pip install scanpy[leiden] anndata matplotlib pandas numpy scikit-misc -q
 
 import scanpy as sc
 import pandas as pd
@@ -207,6 +208,8 @@ adata.raw = adata
 
 ```python
 # 检测高变基因（HVGs）
+# flavor='seurat_v3' 需要 scikit-misc 库（教程开头已安装）
+# 如果遇到 ImportError，运行 !pip install scikit-misc -q
 sc.pp.highly_variable_genes(adata, n_top_genes=2000, flavor='seurat_v3')
 
 # 多少基因被选为高变？
